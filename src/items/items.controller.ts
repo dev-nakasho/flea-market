@@ -7,6 +7,8 @@ import {
   ParseUUIDPipe,
   Patch,
   Post,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { CreateItemDto } from './dto/create-item.dto';
 import { Item } from './item.model';
@@ -27,6 +29,7 @@ export class ItemsController {
   }
 
   @Post()
+  @UsePipes(ValidationPipe)
   create(@Body() createItemDto: CreateItemDto): Item {
     return this.itemsService.create(createItemDto);
   }
