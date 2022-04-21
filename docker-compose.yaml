@@ -25,7 +25,7 @@ services:
       - 81:80
     environment:
       PGADMIN_DEFAULT_EMAIL: nestjs@example.com
-      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_PASSWORD: p@ssWord
     volumes:
       - ./docker/pgadmin:/var/lib/pgadmin
     depends_on:
