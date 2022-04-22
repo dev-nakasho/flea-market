@@ -35,4 +35,7 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # Docker - Output
-/docker
+/docker/pgadmin
+# /docker/postgres/pgdata/base
+# /docker/postgres/pgdata/global
+/docker/postgres/pgdata
