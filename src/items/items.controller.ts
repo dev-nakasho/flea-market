@@ -1,11 +1,11 @@
 import {
   Body,
   Controller,
-  Delete,
+  // Delete,
   Get,
   Param,
   ParseUUIDPipe,
-  Patch,
+  // Patch,
   Post,
   UsePipes,
   ValidationPipe,
@@ -24,8 +24,8 @@ export class ItemsController {
   }
 
   @Get(':id')
-  findById(@Param('id', ParseUUIDPipe) id: string): Item {
-    return this.itemsService.findById(id);
+  async findById(@Param('id', ParseUUIDPipe) id: string): Promise<Item> {
+    return await this.itemsService.findById(id);
   }
 
   @Post()
@@ -34,13 +34,13 @@ export class ItemsController {
     return await this.itemsService.create(createItemDto);
   }
 
-  @Patch(':id')
-  updateStatus(@Param('id', ParseUUIDPipe) id: string): Item {
-    return this.itemsService.updateStatus(id);
-  }
+  // @Patch(':id')
+  // updateStatus(@Param('id', ParseUUIDPipe) id: string): Item {
+  //   return this.itemsService.updateStatus(id);
+  // }
 
-  @Delete(':id')
-  delete(@Param('id', ParseUUIDPipe) id: string) {
-    return this.itemsService.delete(id);
-  }
+  // @Delete(':id')
+  // delete(@Param('id', ParseUUIDPipe) id: string) {
+  //   return this.itemsService.delete(id);
+  // }
 }
