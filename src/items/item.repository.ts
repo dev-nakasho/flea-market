@@ -15,8 +15,4 @@ export class ItemRepository extends Repository<Item> {
     await this.save(item);
     return item;
   }
-
-  async findAll(): Promise<Item[]> {
-    return await this.find();
-  }
 }
